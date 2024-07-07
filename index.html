@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Calculator</title>
+</head>
+<body>
+	<h1>My Calculator</h1>
+	<input id="num1" type="number" placeholder="Number 1">
+	<input id="num2" type="number" placeholder="Number 2">
+	<select id="operation">
+		<option value "+">+</option>
+		<option value "-">-</option>
+		<option value "*">*</option>
+		<option value "/">/</option>
+	</select>
+	<button onclick="calculate()">=</button>
+	<p id="result"></p>
+
+	<script>
+		function calculate() {
+			var num1 = parseFloat(document.getElementById("num1").value);
+			var num2 = parseFloat(document.getElementById("num2").value);
+			var operation = document.getElementById("operation").value;
+			var result;
+
+			switch (operation) {
+				case "+":
+					result = num1 + num2;
+					break;
+				case "-":
+					result = num1 - num2;
+					break;
+				case "*":
+					result = num1 * num2;
+					break;
+				case "/":
+					result = num1 / num2;
+					break;
+			}
+
+			document.getElementById("result").innerHTML = result;
+		}
+	</script>
+</body>
+</html>
